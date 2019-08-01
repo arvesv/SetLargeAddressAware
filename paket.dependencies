@@ -1,0 +1,3 @@
+source https://api.nuget.org/v3/index.json
+
+nuget LargeAddressAware -Version 1.0.3

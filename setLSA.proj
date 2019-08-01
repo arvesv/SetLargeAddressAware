@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <!--
+      Full path to the assembly that contains the MSBuild task
+    -->
+    <LargeAddressAwareAssemblyFile Condition=" '$(LargeAddressAwareAssemblyFile)' == '' ">$(MSBuildThisFileDirectory)packages\LargeAddressAware\build\net46\SetLargeAddressAware.dll</LargeAddressAwareAssemblyFile>
+  </PropertyGroup>
+
+  <Target Name="SetLargeAddressAware" >
+
+    <SetLargeAddressAware FilePath="$(File)" />
+
+  </Target>
+
+  <UsingTask TaskName="SetLargeAddressAware"
+             AssemblyFile="$(LargeAddressAwareAssemblyFile)" />
+</Project>
